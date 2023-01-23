@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    background-image: url("../img/fondo.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+header{
+    height: 100vh;
+}
+.avatar{
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.arriba{
+    height: calc(15% + 95px);
+    backdrop-filter: blur(5px) brightness(0.05);
+
+}
+.centro{
+    background-color: aliceblue;
+    z-index: 5;
+    height: 5px;
+
+}
+.perfil{
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 2px 4px rgba(26, 20, 20, 0.5);
+
+}
+.intro{
+    color: aliceblue;
+    z-index: 10;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 50px;
+}
+.abajo{
+    height: calc(85% - 95px);
+    backdrop-filter: blur(9px) brightness(0.1) saturate(80%);
+}
+.navegador{
+    position: absolute;
+    z-index: 15 inherit;
+    gap: 10px;
+    bottom: 80px;
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.nav_but{
+    background-color: transparent;
+    color: aliceblue;
+    text-align: center;
+    border: 2px solid aliceblue;
+    border-radius: 5px;
+    padding: 6px;
+    width: 100px;
+    font-size:medium;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    transition: .5s ease;
+}
+.nav_but:hover{
+    background-color: rgba(83, 25, 25, 0.5);
+    cursor: pointer;
+    transition: .5s ease;
+}
+.nav_but:active{
+    background-color: rgba(139, 43, 43, 0.5);
+}
+main{
+    background-color: rgb(8, 7, 7);
+    width: 100%;
+    height: auto;
+}
+.informacion{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.titulo{
+    color: aliceblue;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+}
+.ralla{
+    height: 3px;
+    background-color: aliceblue;
+    border-radius: 2px;
+    width: 25%;
+    margin-bottom: 50px;
+    
+}
+.expan_ralla{
+    animation: 2s expandir forwards;
+}
+@keyframes expandir{
+    to{
+        width: 50%;
+    }
+}
+.info{
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.logo{
+    width: 150px;
+    border-radius: 50%;
+    transform: translate(-50vw);
+    visibility: hidden;
+}
+.desc{
+    width: 275px;
+    color: aliceblue;
+    font-size: larger;
+    text-align: center;
+    transform: translate(52vw);
+    visibility: hidden;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.anim_aparecer{
+    animation: aparecer 2s ease-out forwards;
+}
+    
+footer{
+    background-color: black;
+    display: flex;
+    align-content: center;
+    width: 100%;
+    height: 100px;
+}
+.text_footer{
+    text-align: center;
+}
+.divisor{
+    z-index: 5;
+    height: 5px;
+    backdrop-filter: brightness(0.9);
+}
+@keyframes aparecer{
+    to{
+        transform: translate(0px);
+        visibility: visible;
+    }
+}
+
+@media (max-width: 450px) {
+    body{
+        background-image: url("../img/fondo_movil.jpg");
+    }
+    .info{
+        flex-direction: column;
+        align-items: center;
+    }
+    .desc{
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .intro{
+        font-size:x-large;
+    }
+}
